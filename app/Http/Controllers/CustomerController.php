@@ -25,7 +25,7 @@ class CustomerController extends Controller
         'customer_name'=>$request->name,
         'address'=>$request->address,
         'phone_number'=>$request->number,
-        'customer_description'=>$request->description,
+        'customer_description'=>$request->customer_description,
         
 
     ]);

@@ -39,7 +39,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Customer description</label>
-    <input required name="description" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    <input  name="customer_description" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
 
   <br>
