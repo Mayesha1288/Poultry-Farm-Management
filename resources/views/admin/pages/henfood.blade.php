@@ -19,7 +19,7 @@
     <!-- first we will write the variables name and then write the name which isgiven in the  database table -->
     <!-- the first one is the one which is written in compact and the next one is variable -->
     <!-- foreach is used for loop -->
-  @foreach($foods as $food)
+   @foreach($foods as $food)
     <tr>
     <th > {{$food->id}}</th>
         <th > {{$food->food_name}}</th>
@@ -30,7 +30,8 @@
     </tr>
     @endforeach
 
+    <a href= "{{route ('admin.dashboard')}}"  class="btn btn-info">Back</a>
+  </tbody>
 
-
-
+</table>
 @endsection

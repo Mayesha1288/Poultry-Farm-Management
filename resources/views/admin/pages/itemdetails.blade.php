@@ -9,6 +9,7 @@
 
     <p> Item Name :{{$items->name}}</p>  
 <p> Item Type Name :{{$items->itemType->name}}</p>
+<p> Item Quantity :{{$items->stock_quantity}}</p>
 <p> Item Description :{{$items->description}}</p>
 <p>Price: <h4><span style="color: orange">BDT {{$items->price}}</span></h4> </p>
 <p>Unit:{{$items->unit}}</p>

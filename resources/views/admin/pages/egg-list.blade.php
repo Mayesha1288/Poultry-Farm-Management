@@ -51,5 +51,5 @@
     
     </tbody>
 </table>
-
+<a href= "{{route ('admin.dashboard')}}"  class="btn btn-info">Back</a>
 @endsection

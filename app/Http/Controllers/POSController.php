@@ -12,7 +12,8 @@ class POSController extends Controller
        
         $item = Item::all();
         $customer = Customer::all();
+        $carts= session()->get('cart');
         // dd($customer);
-        return view('admin.pages.pos',compact('item','customer'));
+        return view('admin.pages.pos',compact('item','customer','carts'));
     }
 }

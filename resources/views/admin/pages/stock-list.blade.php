@@ -75,10 +75,6 @@
     
   </tbody>
 
-</table>
-
-
-
-
-
+</table><br>
+<a href= "{{route ('admin.dashboard')}}"  class="btn btn-info">Back</a>
 @endsection

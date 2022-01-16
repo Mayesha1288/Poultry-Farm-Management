@@ -17,17 +17,19 @@
     <!-- first we will write the variables name and then write the name which isgiven in the  database table -->
     <!-- the first one is the one which is written in compact and the next one is variable -->
     <!-- foreach is used for loop -->
-  @foreach($vaccines as $vaccine)
+   @foreach($vaccines as $vaccine)
     <tr>
-    <th > {{$vaccine->id}}</th>
+      <th > {{$vaccine->id}}</th>
         <th > {{$vaccine->vaccine_name}}</th>
         <th>{{$vaccine->vaccine_production}}</th>
         <th>{{$vaccine->vaccine_expiration}}</th>
         <th>{{$vaccine->vaccine_description}}</th>
         
     </tr>
-    @endforeach
+   @endforeach
 
+    <a href= "{{route ('admin.dashboard')}}"  class="btn btn-info">Back</a>
+  </tbody>
 
-
+</table>
 @endsection

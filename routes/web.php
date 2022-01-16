@@ -14,6 +14,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ItemTypeController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\POSController;
+use App\Http\Controllers\CartController;
 
 
 
@@ -188,6 +189,11 @@ Route::post('/admin/sale/store',[SaleController::class,'store'])->name('admin.sa
 Route::get('/admin/payment',[PaymentController::class,'payment'])->name('admin.payment');
 Route::get('/admin/payment/create',[PaymentController::class,'createpayment'])->name('admin.payment.create');
 Route::post('admin/payment/store',[PaymentController::class,'store'])->name('admin.payment.store');
+
+
+Route::get('/add-to-cart/{id}',[CartController::class,'addTocart'])->name('cart.add');
+Route::get('/get-cart',[CartController::class,'getcart'])->name('cart.get');
+Route::get('/clear-cart',[CartController::class,'clearCart'])->name('cart.clear');
 
     });
 });

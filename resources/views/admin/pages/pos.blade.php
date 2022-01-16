@@ -200,39 +200,63 @@ Resources
         
         
     </div>
-    <div class="row"style="margin-top: 30px;">
-                <div class="col-md-4 col-sm-6">
+    <div class="row"style="margin-top: 10px;" >
+                <div class="col-lg-5">
                     <div class="pricingTable">
                         
                         <ul class="pricing-content">
-                            <li>Item not added</li>
-                            
+                            <li  class="text-danger"></li>
+                             <table class="table">
+                                 <thead>
+                                     <tr>
+                                         <th>Name</th>
+                                         <th>Price</th>
+
+                                         <th>Qty</th>
+                                         <th>Sub Total</th>
+                                         <th>Action</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                 @if($carts)
+                                   @foreach($carts as $key=>$data)
+                                     <tr>
+                                          <td>{{$data['name']}}</td>
+                                          <td>{{$data['price']}}</td>
+                                          <td>{{$data['product_qty']}}</td>
+                                          <td>{{$data['price'] * $data['product_qty']}}</td>
+                                          <td>
+                                              <a href="" class="btn btn-info"><i class="material-icons">add_shopping_cart</i></a>
+                                        </td>
+                                      </tr>
+                                    @endforeach
+                                    @endif
+                                 </tbody>
+                             </table>  
+                             <a href="{{route('cart.clear')}}" class="btn btn-danger">Clear Cart</a>                          
                         </ul>
 
                         <div class="pricingTable-header">
-                            <h3 class="heading">Total</h3>
-                            <span class="subtitle">Lorem ipsum dolor sit amet</span>
-                            <div class="price-value">10
-                                <span class="currency">$</span>
-                                <span class="month">/mo</span>
-                            </div>
+                            <p  style="font-size: 19px;">Quantity: 00.00</p>
+                            <p  style="font-size: 19px;">Price: 00.00</p>
+                            <h3 class="heading">Total : 00.00</h3>
                         </div>
                         <a href="#" class="read">Create Invoice<i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
-    <div class="col-lg-8">
+    <div class="col-lg-4">
     All items
     <table class="table table-hover">
     <thead>
     <tr>
-       
         <th scope="col">Name</th>
         <th scope="col">Type ID</th>
         <th scope="col">Image</th>
         <th scope="col">Price</th>
         <th scope="col">Unit</th>
         <th scope="col">Action</th>
-           
+        <!-- <i class="fas fa-plus"></i>  -->
+        
     </tr>
     </thead>
     <tbody>
@@ -240,7 +264,7 @@ Resources
     @foreach($item as $items)
     <tr>
         
-        <th><a href="" style="font-size: 20px;"> <i class="fas fa-plus"></i></a>
+        <th><a href="{{route('cart.add',$items->id)}}" style="font-size: 20px;"> <i class="fas fa-plus"></i></a>
         {{$items->name}}
         </th>
         <th>{{$items->itemType->name}}</th>
@@ -252,6 +276,8 @@ Resources
        
         <td>
                         <a class="btn btn-primary" href="{{route('admin.item.details',$items->id)}}">View</a>
+                        <!-- <a class="btn btn-primary" href="">Add</a> -->
+
                       
                     </td>
     </tr>
@@ -277,6 +303,16 @@ Resources
         <h5 class="modal-title" id="exampleModalLabel">Customer</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+      @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
       <div class="modal-body">
       <body>
     <h2>Add Customer From Here!</h2>

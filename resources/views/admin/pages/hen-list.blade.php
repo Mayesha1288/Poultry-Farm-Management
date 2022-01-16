@@ -3,8 +3,8 @@
 @section('contents')
 <a href="{{route('admin.hens.create')}}" class="btn btn-success">Create Hen list</a>
 <a href="{{route('admin.hens.vaccine')}}" class="btn btn-primary">Check the Vaccine </a>
-<a href="{{route('admin.hens.food')}}" class="btn btn-info">Check the Food </a>
-
+<a href="{{route('admin.hens.food')}}" class="btn btn-warning">Check the Food </a>
+<a href= "{{route ('admin.dashboard')}}"  class="btn btn-info">Back</a>
 <form action="{{route('admin.hen.search')}}" method="GET">
     <div class="input-group mb-3">
         <input name="search" type="text" class="form-control" placeholder="Search">
