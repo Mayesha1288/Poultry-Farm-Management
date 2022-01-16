@@ -39,7 +39,10 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Customer description</label>
-    <input  name="customer_description" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    <select  required name="customer_description"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hen type">
+        <option > Walk in Customer</option>
+        <option > Regular Customer</option>
+     </select>
   </div>
 
   <br>

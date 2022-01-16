@@ -60,7 +60,10 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Unit</label>
-    <input required name="unit" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    <select  required name="unit"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hen type">
+        <option > Kg</option>
+        <option > Piece</option>
+     </select>
   </div>
   <br>
   <button type="submit" class="btn btn-primary">Let's Enter this</button>

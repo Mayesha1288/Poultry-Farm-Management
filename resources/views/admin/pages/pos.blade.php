@@ -201,7 +201,7 @@ Resources
         
     </div>
     <div class="row"style="margin-top: 10px;" >
-                <div class="col-lg-5">
+                <div style="width:50%;">
                     <div class="pricingTable">
                         
                         <ul class="pricing-content">
@@ -244,8 +244,8 @@ Resources
                         <a href="#" class="read">Create Invoice<i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
-    <div class="col-lg-4">
-    All items
+    <div style="width:40%; margin-bottom:30px;">
+
     <table class="table table-hover">
     <thead>
     <tr>
