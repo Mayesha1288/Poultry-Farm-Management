@@ -11,7 +11,7 @@ class SaleController extends Controller
     public function salelist()
     {
          $sale = Item::all();
-         $sales = Sale::all();
+         $sales = Sale::with('customer')->get();
     //    dd($sale);
         return view('admin.pages.salelist',compact('sale','sales'));
     }
@@ -25,13 +25,13 @@ class SaleController extends Controller
      }
      public function store(Request $request)
      {
-     // dd($request->all());
+    //  dd($request->all());
       //   the name which is written in the databaase table then the name written in the form
       Sale::create([
-          'item_id'=>$request->sale_item,
-          'sale_quantity'=>$request->sale_quantity,
-  
-      ]);
-      return redirect()->back()->with('msg','Sales Inserted  successfully.');
+        'customer_name'=>$request->customer_name,
+        'total'=>$request->total,
+        'paid_amount'=>$request->paid_amount,
+    ]);
+    return redirect()->back()->with('msg','Sales Inserted  successfully.');
      }
 }

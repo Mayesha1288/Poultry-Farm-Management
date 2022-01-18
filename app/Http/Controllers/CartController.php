@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Cart;
+use App\Models\Sale;
 
 class CartController extends Controller
 {
@@ -60,7 +61,20 @@ class CartController extends Controller
 
     }
      
-    
+    public function updateCart(Request $request){
+        $id= $request->input('cart_id');
+        $cart = session('cart');
+        $product_quantity = Item::find($id);
+        if ($request->quantity > $product_quantity->quantity) {
+            return redirect()->route('product.cart');
+        }
+        else {
+            $cart[$id]['product_qty'] = $request->input('qty');
+            session()->put('cart', $cart);
+            return redirect()->back();
+        }
+
+    }
 
     public function getCart()
     {
@@ -74,5 +88,12 @@ class CartController extends Controller
         return redirect()->back()->with('message','Cart cleared successfully.');
 
     }
-     
+    public function paid(Request $request)
+    {
+        // dd($request->all());
+        
+
+    }
+    
+    
 }

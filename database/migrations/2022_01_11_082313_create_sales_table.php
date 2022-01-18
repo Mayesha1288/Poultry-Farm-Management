@@ -15,9 +15,9 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->integer('item_id');
-            $table->integer('sale_item');
-            $table->string('sale_quantity');
+            $table->string('customer_name');
+            $table->double('total');
+            $table->string('paid_amount');
             $table->timestamps();
         });
     }

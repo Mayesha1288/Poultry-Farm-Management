@@ -87,8 +87,9 @@
   <thead>
     <tr>
       <th>#ID</th>
-      <th>Item ID</th>
-      <th>Quantity</th>
+      <th>Customer Name</th>
+      <th>Total</th>
+      <th>Paid Amount</th>
       <th>Action</th>
   
     </tr>  
@@ -96,8 +97,9 @@
   @foreach($sales as $sale)
     <tr>
         <th>{{$sale->id}}</th>
-        <th>{{$sale->type_id}}</th>
-        <th>{{$sale->price}}</th>
+        <th>{{optional($sale->customer)->customer_name}}</th>
+        <th>{{$sale->total}}</th>
+        <th>{{$sale->paid_amount}}</th>
  </tr>
     @endforeach
  </body>

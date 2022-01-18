@@ -12,5 +12,10 @@ class Item extends Model
     public function itemType()
     {
         return $this->belongsTo(Itemtype::class,'type_id','id');
+       
+    }
+    public function stock()
+    {
+        return $this->belongsTo(Stock::class,'stockquantity','id');
     }
 }

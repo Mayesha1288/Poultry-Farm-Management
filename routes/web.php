@@ -194,6 +194,8 @@ Route::post('admin/payment/store',[PaymentController::class,'store'])->name('adm
 Route::get('/add-to-cart/{id}',[CartController::class,'addTocart'])->name('cart.add');
 Route::get('/get-cart',[CartController::class,'getcart'])->name('cart.get');
 Route::get('/clear-cart',[CartController::class,'clearCart'])->name('cart.clear');
+Route::post('/update-cart',[CartController::class,'updateCart'])->name('cart.update');
+Route::post('/update-paid',[CartController::class,'paid'])->name('cart.paid');
 
     });
 });

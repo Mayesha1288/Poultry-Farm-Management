@@ -10,7 +10,9 @@ class ItemController extends Controller
 {
     public function item()
     {
-        $item=Item::with('itemType')->get();
+        $item=Item::with(['itemType','stock'])->get();
+        
+        // $item=Item::with('stock')->get();
         return view('admin.pages.itemlist',compact('item'));
     }
 
@@ -78,7 +80,8 @@ class ItemController extends Controller
 
 //        collection= get(), all()====== read with loop (foreach)
 //       object= first(), find(), findOrFail(),======direct
-     $items=Item::find($item_id);
+     $items=Item::with('stock')->find($item_id);
+    //  dd($items);
        return view('admin.pages.itemdetails',compact('items'));
    }
 

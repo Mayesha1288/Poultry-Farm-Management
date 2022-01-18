@@ -6,31 +6,25 @@
 <center>
 
 <style>
-
-Edit in JSFiddle
-Result
-HTML
-CSS
-Resources
-.demo
-{
+ .demo
+ {
 	padding: 50px 0;
-}
-.heading-title
-{
+ }
+ .heading-title
+ {
 	margin-bottom: 50px;
-}
+ }
 
-.pricingTable{
+ .pricingTable{
     border: 2px solid #e3e3e3;
     text-align: center;
     position: relative;
     padding-bottom: 40px;
     transform: translateZ(0px);
-}
+ }
 
-.pricingTable:before,
-.pricingTable:after{
+ .pricingTable:before,
+ .pricingTable:after{
     content: "";
     position: absolute;
     top: -2px;
@@ -39,84 +33,84 @@ Resources
     right: -2px;
     z-index: -1;
     transition: all 0.5s ease 0s;
-}
+ }
 
-.pricingTable:before{
+ .pricingTable:before{
     border-right: 2px solid #08c6aa;
     border-left: 2px solid #08c6aa;
     transform: scaleY(0);
     transform-origin: 100% 0 0;
-}
+ }
 
-.pricingTable:after{
+ .pricingTable:after{
     border-bottom: 2px solid #08c6aa;
     border-top: 2px solid #08c6aa;
     transform: scaleX(0);
     transform-origin: 0 100% 0;
-}
+ }
 
-.pricingTable:hover:before{
+ .pricingTable:hover:before{
     transform: scaleY(1);
-}
+ }
 
-.pricingTable:hover:after{
+ .pricingTable:hover:after{
     transform: scaleX(1);
-}
+ }
 
-.pricingTable .pricingTable-header{
+ .pricingTable .pricingTable-header{
     background: #08c6aa;
     color: #fff;
     margin: -2px -2px 35px;
     padding: 40px 0;
-}
+ }
 
-.pricingTable .heading{
+ .pricingTable .heading{
     font-size: 30px;
     font-weight: 600;
     margin: 0 0 5px 0;
-}
+ }
 
-.pricingTable .subtitle{
+ .pricingTable .subtitle{
     font-size: 14px;
     display: block;
-}
+ }
 
-.pricingTable .price-value{
+ .pricingTable .price-value{
     font-size: 72px;
     font-weight: 600;
     margin-top: 10px;
     position: relative;
     display: inline-block;
-}
+ }
 
-.pricingTable .currency{
+ .pricingTable .currency{
     font-size: 45px;
     font-weight: normal;
     position: absolute;
     top: 2px;
     left: -30px;
-}
+ }
 
-.pricingTable .month{
+ .pricingTable .month{
     font-size: 20px;
     position: absolute;
     bottom: 17px;
     right: -40px;
-}
+ }
 
-.pricingTable .pricing-content{
+ .pricingTable .pricing-content{
     list-style: none;
     padding: 0;
     margin-bottom: 30px;
-}
+ }
 
-.pricingTable .pricing-content li{
+ .pricingTable .pricing-content li{
     font-size: 16px;
     color: #7a7e82;
     line-height: 40px;
-}
+ }
 
-.pricingTable .read{
+ .pricingTable .read{
     display: inline-block;
     border: 2px solid #7a7e82;
     border-right: none;
@@ -127,28 +121,28 @@ Resources
     position: relative;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
-}
+ }
 
-.pricingTable .read:hover{
+ .pricingTable .read:hover{
     border-color: #08c6aa;
     color: #08c6aa;
-}
+ }
 
-.pricingTable .read i{
+ .pricingTable .read i{
     font-size: 19px;
     margin-top: -10px;
     position: absolute;
     top: 50%;
     right: 15px;
     transition: all 0.3s ease 0s;
-}
+ }
 
-.pricingTable .read:hover i{
+ .pricingTable .read:hover i{
     right: 5px;
-}
-
-.pricingTable .read:before,
-.pricingTable .read:after{
+ }
+ 
+ .pricingTable .read:before,
+ .pricingTable .read:after{
     content: "";
     display: block;
     height: 30px;
@@ -156,51 +150,36 @@ Resources
     position: absolute;
     right: -11px;
     transition: all 0.3s ease 0s;
-}
+ }
 
-.pricingTable .read:before{
+ .pricingTable .read:before{
     bottom: -6px;
     transform: rotate(45deg);
-}
+ }
 
-.pricingTable .read:after{
+ .pricingTable .read:after{
     top: -6px;
     transform: rotate(-45deg);
-}
+ }
 
-.pricingTable .read:hover:before,
-.pricingTable .read:hover:after{
+ .pricingTable .read:hover:before,
+ .pricingTable .read:hover:after{
     border-left-color: #08c6aa;
-}
+ }
 
-@media screen and (max-width: 990px){
+ @media screen and (max-width: 990px){
     .pricingTable{ margin-bottom: 25px; }
-}
+ }
 
-/* Credit to http://labs.bootstrapthemes.co/demo/Resource/PricingTableStyleDemo38/ */
+  /* Credit to http://labs.bootstrapthemes.co/demo/Resource/PricingTableStyleDemo38/ */
 </style>
 
 <div class="row">
-    <div class="col-lg-4">
-     POS
-        <div class="panel">
-          <h4 class="text-info">Customer</h4>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-           Add
-           </button>
-          </h4>
-            <select class="form-control">
-              <option>Select Customer</option>
-              @foreach($customer as $customers)
-        
-              <option value="{{$customers->id}}">{{$customers->customer_name}} </option>
-              @endforeach
-            </select>     
-        </div>
-        
-        
-    </div>
-    <div class="row"style="margin-top: 10px;" >
+
+
+
+    
+        <div class="row"style="margin-top: 10px;" >
                 <div style="width:50%;">
                     <div class="pricingTable">
                         
@@ -211,40 +190,80 @@ Resources
                                      <tr>
                                          <th>Name</th>
                                          <th>Price</th>
-
                                          <th>Qty</th>
                                          <th>Sub Total</th>
-                                         <th>Action</th>
                                      </tr>
                                  </thead>
                                  <tbody>
+                                      
+                                      
+                                      @php
+                                        $total = 0
+                                      @endphp
                                  @if($carts)
                                    @foreach($carts as $key=>$data)
                                      <tr>
                                           <td>{{$data['name']}}</td>
                                           <td>{{$data['price']}}</td>
-                                          <td>{{$data['product_qty']}}</td>
+                                          <td> 
+                                              <form action="{{route('cart.update')}}" method="post">
+                                                  @csrf
+                                               <input hidden value="{{$key}}" name="cart_id">
+                                              <input value="{{$data['product_qty']}}" type="text" id="pin" name="qty" maxlength="4" size="4">
+                                              <button type="submit" class="btn btn-info"><i class="material-icons">add_shopping_cart</i></button>
+
+                                              </form>
+                                              <!-- <input size="4" value="{{$data['product_qty']}}" type="number" name="qty"> -->
+                                            </td>
                                           <td>{{$data['price'] * $data['product_qty']}}</td>
                                           <td>
-                                              <a href="" class="btn btn-info"><i class="material-icons">add_shopping_cart</i></a>
                                         </td>
                                       </tr>
+                                      @php
+                                      $total = $total + ($data['price'] * $data['product_qty'])
+                                      @endphp
                                     @endforeach
                                     @endif
                                  </tbody>
                              </table>  
+
                              <a href="{{route('cart.clear')}}" class="btn btn-danger">Clear Cart</a>                          
                         </ul>
-
+                        <form action="{{route('admin.sale.store')}}" method="post">
+                         @csrf
                         <div class="pricingTable-header">
-                            <p  style="font-size: 19px;">Quantity: 00.00</p>
-                            <p  style="font-size: 19px;">Price: 00.00</p>
-                            <h3 class="heading">Total : 00.00</h3>
+                           <p class="fs-5"> No.of Items: {{ count(Session::get('cart', array())) }} </p>
+                            <h3 class="heading">Total : {{$total}} Taka </h3>
+                           <h3>Paid : <input type="text" name="paid_amount" value="{{$total}}"></h3>
+                           <input type="hidden" name="total" value="{{$total}}">
+                            
                         </div>
-                        <a href="#" class="read">Create Invoice<i class="fa fa-angle-right"></i></a>
+        <div class="col-lg-4">
+           <div class="panel">
+            <h4 class="text-info">Customer</h4>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+             Add
+            </button>
+            </h4>
+            <select  required class="form-control" name="customer_name">
+              <option>Select Customer</option>
+              @foreach($customer as $customers)
+        
+              <option value="{{$customers->id}}">{{$customers->customer_name}} </option>
+              @endforeach
+            </select>     
+          </div>  
+        </div>
+                        <!-- <input type="hiddend" name="total" value="{{$total}}">   -->
+                        <button type="submit" class="btn btn-primary">Proceed To Check out</button>
+
+
+</form>
+
                     </div>
                 </div>
-    <div style="width:40%; margin-bottom:30px;">
+     <div style="width:40%; margin-bottom:30px;">
+    
 
     <table class="table table-hover">
     <thead>

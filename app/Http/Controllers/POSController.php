@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class POSController extends Controller
 {
     public function pos()
-    {
+   {
+        // dd($request->all());
        
         $item = Item::all();
         $customer = Customer::all();
@@ -16,4 +17,5 @@ class POSController extends Controller
         // dd($customer);
         return view('admin.pages.pos',compact('item','customer','carts'));
     }
+    
 }

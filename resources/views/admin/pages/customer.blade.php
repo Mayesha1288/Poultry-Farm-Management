@@ -26,7 +26,7 @@
         <th>{{$customers->phone_number}}</th>
         <th>{{$customers->customer_description}}</th>
         <td>
-                        <a class="btn btn-primary" href="{{route('admin.customer.details',$customers->id)}}">View</a>
+        <a class="btn btn-primary" href="{{route('admin.customer.details',$customers->id)}}">View</a>
         </td>
 
     </tr>

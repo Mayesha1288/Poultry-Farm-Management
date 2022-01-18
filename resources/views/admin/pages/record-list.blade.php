@@ -7,14 +7,26 @@
         <p class="alert alert-success">{{session()->get('msg')}}</p>
     @endif
 <center>
-<form action="{{route('admin.record.search')}}" method="GET">
-<ul class="navbar-nav">
+<!-- <form action="{{route('admin.record.search')}}" method="GET">
+<ul class="navbar-nav"> -->
 
   <center>
-<li class="col-md-4">
+    <form action="{{route('admin.record.search')}}">
+<div class="input-group rounded mt-3 mb-2">
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" name="search" placeholder="Search" arial-label="Search" aria-describedby="search-addon" />
+    <!-- <label class="form-label" for="form1">Search</label> -->
+  </div>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
+</form>
+<!-- <li class="col-md-4">
 <input type="text" placeholder="Search.." name="search">
 <button type="submit">Submit</button>
-  </li>
+  </li> -->
 </center>
 </ul>
     </form>
