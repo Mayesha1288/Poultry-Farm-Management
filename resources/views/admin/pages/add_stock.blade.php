@@ -31,18 +31,18 @@
     border-radius: 5px;
     padding:5px;
   }
-  </style>
+</style>
 
   <br>
   @if(session()->has('success'))
-<p class="alert alert-success">
+   <p class="alert alert-success">
     {{session()->get('success')}}
-</p>
-@endif
+   </p>
+  @endif
   <body>
     <h2>Add Stock From Here!</h2>
   
-  <div>
+   <div>
     <form action="{{route('admin.stock.store')}}" method="POST">
       @csrf
        <label for="stock">Stock Item</label>
@@ -56,6 +56,6 @@
       <input type="number" id="lname" name="stock_quantity" placeholder="stock quantity..">
       <input type="submit" value="Save">
     </form>
-  </div>
+   </div>
   </body>
 @endsection

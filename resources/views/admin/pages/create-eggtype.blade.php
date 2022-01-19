@@ -7,17 +7,17 @@
     outline: none !important;
     border:2px solid 	purple !important;
     box-shadow: 0 0 10px #719ECE;
-}
+ }
 </style>
 
 
-@if ($errors->any())
+  @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
                 <p class="alert alert-danger">{{$error}}</p>
             </div>
         @endforeach
-    @endif
+  @endif
 
     @if(session()->has('msg'))
         <p class="alert alert-success">{{session()->get('msg')}}</p>
@@ -38,7 +38,7 @@
         <option > white eggs of broiler hens</option>
         <option > eggs of pakistani hens</option>
         <option > eggs of layer hens</option>
-</select>
+ </select>
 
   </div>
   

@@ -11,13 +11,13 @@
 </style>
 
 
-@if ($errors->any())
+  @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
                 <p class="alert alert-danger">{{$error}}</p>
             </div>
         @endforeach
-    @endif
+  @endif
 
     @if(session()->has('msg'))
         <p class="alert alert-success">{{session()->get('msg')}}</p>
@@ -38,12 +38,11 @@
         <option > pakistani</option>
         <option > layer</option>
         <option > sonalika</option>
-</select>
+ </select>
 
   </div>
   
   
   <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
 </form> 
-
 @endsection

@@ -23,7 +23,7 @@ class CartController extends Controller
             //  action: add product to cart
             $cartData = [
                 $id => [
-                
+                    'item_id'=>$item->id,
                     'name' => $item->name,
                     'price' => $item->price,
                     'product_qty' => 1,
@@ -39,6 +39,7 @@ class CartController extends Controller
         if(!isset($cartExist[$id]))
         {
             $cartExist[$id] = [
+                'item_id'=>$item->id,
                 'name' => $item->name,
                 'price' => $item->price,
                 'product_qty' => 1,

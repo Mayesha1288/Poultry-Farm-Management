@@ -248,14 +248,13 @@
             <select  required class="form-control" name="customer_name">
               <option>Select Customer</option>
               @foreach($customer as $customers)
-        
               <option value="{{$customers->id}}">{{$customers->customer_name}} </option>
               @endforeach
             </select>     
           </div>  
         </div>
                         <!-- <input type="hiddend" name="total" value="{{$total}}">   -->
-                        <button type="submit" class="btn btn-primary">Proceed To Check out</button>
+                       <br><br> <button type="submit" class="btn btn-primary">Proceed To Check out</button>
 
 
 </form>

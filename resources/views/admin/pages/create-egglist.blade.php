@@ -7,17 +7,17 @@
     outline: none !important;
     border:2px solid 	rgb(77, 0, 0) !important;
     box-shadow: 0 0 10px #719ECE;
-}
+   }
 </style>
 
 
-@if ($errors->any())
+  @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
                 <p class="alert alert-danger">{{$error}}</p>
             </div>
         @endforeach
-    @endif
+  @endif
 
     @if(session()->has('msg'))
         <p class="alert alert-success">{{session()->get('msg')}}</p>

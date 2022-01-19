@@ -32,7 +32,7 @@
      background-color: rgb(9, 24, 68);
      color: white;
    }
-   </style>
+</style>
 <br>
 <div class="heading">
   <h2>Sale List</h2>
@@ -40,12 +40,12 @@
 
 <br>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add
-</button>
+</button> -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -66,8 +66,15 @@
         @endforeach
       </select>
       <br>
-      <label for="lname"> Sale Quantity</label>
-      <input type="number" id="lname" name="sale_quantity" placeholder="sale quantity..">
+      <label for="lname"> customer name</label>
+      <input type="number" id="lname" name="sale_quantity" placeholder="">
+      <input type="submit" value="Save">
+      <br>
+      <label for="lname">  Total Price </label>
+      <input type="number" id="lname" name="total" placeholder="">
+      <input type="submit" value="Save"><br>
+      <label for="lname"> Paid</label>
+      <input type="number" id="lname" name="paid_amount" placeholder="">
       <input type="submit" value="Save">
     </form>
   </div>
@@ -80,7 +87,7 @@
     </div>
   </div>
 </div>
-</body>
+</body> -->
 
 <body>
 <table id="customers">
@@ -90,6 +97,8 @@
       <th>Customer Name</th>
       <th>Total</th>
       <th>Paid Amount</th>
+      <th>Due</th>
+      <th>Return</th>
       <th>Action</th>
   
     </tr>  
@@ -100,9 +109,24 @@
         <th>{{optional($sale->customer)->customer_name}}</th>
         <th>{{$sale->total}}</th>
         <th>{{$sale->paid_amount}}</th>
+        @php
+        $due= $sale->total - $sale->paid_amount;
+        @endphp
+        @if($due<=0)
+        <th>0</th>
+        @else
+        <th>{{$due}}</th>
+        @endif
+
+        @if($due<=0)
+        <th>{{$sale->paid_amount - $sale->total}}</th>
+        @else
+        <th>0</th>
+        @endif
+       <th> <a class="btn btn-primary" href="{{route('admin.sale.details',$sale->id)}}">View</a> </th>
  </tr>
     @endforeach
  </body>
- </table>
-
+ </table><br>
+ <a href= "{{route ('admin.dashboard')}}"  class="btn btn-info">Back</a>
 @endsection

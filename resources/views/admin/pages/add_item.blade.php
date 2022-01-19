@@ -2,9 +2,9 @@
 
 @section('contents')
 
-<h2>Add Item From Here!</h2>
+ <h2>Add Item From Here!</h2>
 
-@if ($errors->any())
+  @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
                 <p class="alert alert-danger">{{$error}}</p>
@@ -14,16 +14,16 @@
 
     @if(session()->has('msg'))
         <p class="alert alert-success">{{session()->get('msg')}}</p>
-    @endif
+  @endif
 
 
-    <style>
-  input:focus {
+  <style>
+   input:focus {
     outline: none !important;
     border:2px solid 	rgb(77, 0, 0) !important;
     box-shadow: 0 0 10px #719ECE;
-}
-</style>
+   }
+  </style>
 
 
 <form  action="{{route('admin.item.store')}}" method="post"  enctype="multipart/form-data">
@@ -36,8 +36,7 @@
     <label for="exampleInputPassword1">Type ID</label>
     <select name="type_id" class="form-control" id="exampleInputEmail1"> 
       @foreach($itemtype as $itemtype)
-        
-        <option value="{{$itemtype-> id}}"> {{$itemtype->name}} </option>
+         <option value="{{$itemtype-> id}}"> {{$itemtype->name}} </option>
         @endforeach
     </select>
   </div>
@@ -69,6 +68,4 @@
   <button type="submit" class="btn btn-primary">Let's Enter this</button>
   <a href= "{{route ('admin.item')}}"  class="btn btn-info">Back</a>
 </form>
-
-
 @endsection

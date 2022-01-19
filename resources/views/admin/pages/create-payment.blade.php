@@ -6,17 +6,17 @@
     outline: none !important;
     border:2px solid 	turquoise !important;
     box-shadow: 0 0 10px #719ECE;
-}
+ }
 </style>
 
 
-@if ($errors->any())
+  @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
                 <p class="alert alert-danger">{{$error}}</p>
             </div>
         @endforeach
-    @endif
+  @endif
 
     @if(session()->has('msg'))
         <p class="alert alert-success">{{session()->get('msg')}}</p>
@@ -25,7 +25,7 @@
 
 <form  action="{{route('admin.payment.store')}}" method="post" >
   @csrf
-<div class="form-group">
+ <div class="form-group">
     <label for="exampleInputPassword1">Customer Name</label>
     <input required name="customer_name" type="text"  class="form-control" id="exampleInputPassword1" placeholder="Customer Name">
   </div>

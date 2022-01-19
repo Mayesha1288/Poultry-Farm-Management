@@ -74,6 +74,8 @@ Route::get('admin/hen/search',[HenController::class,'henSearch'])->name('admin.h
 
 
 
+// all routes of itemtype
+
 Route::get('/admin/itemtype',[ItemTypeController::class,'itemtype'])->name('admin.itemtype');
 Route::get('/admin/itemtype/create',[ItemTypeController::class,'typelist'])->name('admin.itemtype.create');
 Route::post('/admin/itemtype/store',[ItemTypeController::class,'store'])->name('admin.itemtype.store');
@@ -114,10 +116,12 @@ Route::post('/admin/hens/food/store3',[HenController::class,'store3'])->name('ad
 
 // all type of hentype
 
-Route::get('/admin/hentype',[TypeController::class,'hentype'])->name('admin.hentype');
-Route::get('/admin/hentype/create',[TypeController::class,'createhentype'])->name('admin.hentype.create');
-Route::post('/admin/hentype/store',[TypeController::class,'store'])->name('admin.hentype.store');
+// Route::get('/admin/hentype',[TypeController::class,'hentype'])->name('admin.hentype');
+// Route::get('/admin/hentype/create',[TypeController::class,'createhentype'])->name('admin.hentype.create');
+// Route::post('/admin/hentype/store',[TypeController::class,'store'])->name('admin.hentype.store');
 
+
+// all type of eggtype
 
 Route::get('/admin/eggtype',[TypeController::class,'eggtype'])->name('admin.eggtype');
 Route::get('/admin/eggtype/create',[TypeController::class,'createeggtype'])->name('admin.eggtype.create');
@@ -140,19 +144,19 @@ Route::put('admin/egg/update/{egg_id}',[EggController::class,'eggUpdate'])->name
 
 
 
+// routes of stock
 
 Route::get('/admin/stock',[StockController::class,'stocklist'])->name('admin.stock');
 Route::get('/admin/stock/create',[StockController::class,'addstock'])->name('admin.stock.create');
 Route::post('/admin/stock/store',[StockController::class,'store'])->name('admin.stock.store');
 Route::get('stock/delete/{stock_id}',[StockController::class,'stockDelete'])->name('admin.stock.delete');
-// Route::get('/stock/details/{id}',[StockController::class,'stockDetails'])->name('admin.stock.details');
-// Route::get('/eggstock/details/{id}',[StockController::class,'eggstockDetails'])->name('admin.egg-stock.details');
 
 
 
 
 
 
+// routes of customer
 
 Route::get('/admin/customer',[CustomerController::class,'customer'])->name('admin.customer');
 Route::get('/admin/customer/create',[CustomerController::class,'createcustomer'])->name('admin.customer.create');
@@ -161,7 +165,7 @@ Route::get('customer/view/{customer_id}',[CustomerController::class,'customerDet
 
 
 
-
+// routes of records
 
 Route::get('/admin/records',[RecordController::class,'recordlist'])->name('admin.records');
 Route::get('/admin/records/create',[RecordController::class,'createrecordlist'])->name('admin.records.create');
@@ -175,21 +179,24 @@ Route::get('admin/record/search',[RecordController::class,'recordSearch'])->name
 
 
 
-
+// Route of pos
 
 Route::get('/admin/pos',[POSController::class,'pos'])->name('admin.pos');
 
 
+//route of sales
 
 Route::get('/admin/sales',[SaleController::class,'salelist'])->name('admin.sale');
 Route::get('/admin/sale/create',[SaleController::class,'addsale'])->name('admin.sale.create');
 Route::post('/admin/sale/store',[SaleController::class,'store'])->name('admin.sale.store');
-
+Route::get('admin/sale/view/{sale_id}',[SaleController::class,'saleDetails'])->name('admin.sale.details');
 
 Route::get('/admin/payment',[PaymentController::class,'payment'])->name('admin.payment');
 Route::get('/admin/payment/create',[PaymentController::class,'createpayment'])->name('admin.payment.create');
 Route::post('admin/payment/store',[PaymentController::class,'store'])->name('admin.payment.store');
 
+
+// route of cart
 
 Route::get('/add-to-cart/{id}',[CartController::class,'addTocart'])->name('cart.add');
 Route::get('/get-cart',[CartController::class,'getcart'])->name('cart.get');

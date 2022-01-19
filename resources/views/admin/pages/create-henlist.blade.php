@@ -3,26 +3,26 @@
 @section('contents')
 
 
-@if ($errors->any())
+  @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
                 <p class="alert alert-danger">{{$error}}</p>
             </div>
         @endforeach
-    @endif
+  @endif
 
     @if(session()->has('msg'))
         <p class="alert alert-success">{{session()->get('msg')}}</p>
     @endif
 
 
-    <style>
-  input:focus {
+  <style>
+   input:focus {
     outline: none !important;
     border:2px solid 	rgb(77, 0, 0) !important;
     box-shadow: 0 0 10px #719ECE;
-}
-</style>
+   }
+  </style>
 
 
 <form  action="{{route('admin.hens.store')}}" method="post"  enctype="multipart/form-data">
@@ -36,7 +36,7 @@
         <option > pakistani</option>
         <option > layer</option>
         <option > sonalika</option>
-</select>
+ </select>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Hen Weight</label>
