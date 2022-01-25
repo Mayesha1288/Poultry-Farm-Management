@@ -282,8 +282,8 @@
     @foreach($item as $items)
     <tr>
         
-        <th><a href="{{route('cart.add',$items->id)}}" style="font-size: 20px;"> <i class="fas fa-plus"></i></a>
-        {{$items->name}}
+        <th><a href="{{route('cart.add',$items->id)}}" style="font-size: 20px;"> <i class="fas fa-plus"></i>
+        {{$items->name}}</a>
         </th>
         <th>{{$items->itemType->name}}</th>
         <th>
@@ -294,7 +294,7 @@
        
         <td>
                         <a class="btn btn-primary" href="{{route('admin.item.details',$items->id)}}">View</a>
-                        <!-- <a class="btn btn-primary" href="">Add</a> -->
+                        
 
                       
                     </td>

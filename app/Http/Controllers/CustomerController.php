@@ -21,6 +21,13 @@ class CustomerController extends Controller
    {
     //    dd($request->all());
     //   the name which is written in the databaase table then the name written in the form
+
+    $request->validate([
+        'customer_name'=>'required',
+        'address'=>'required',
+        'phone_number'=>'required |  min:11| max: 11|unique:customer',
+        'customer_description'=>'required',
+    ]);
     Customer::create([
         'customer_name'=>$request->name,
         'address'=>$request->address,

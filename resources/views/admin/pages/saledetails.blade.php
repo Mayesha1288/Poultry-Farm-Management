@@ -60,9 +60,15 @@
                         <div class="col-md-4"> <img class="img" alt="Invoce Template" src="http://pngimg.com/uploads/shopping_cart/shopping_cart_PNG59.png" /> </div>
                         <div class="col-md-8 text-right">
                             <h4 style="color: #F81D2D;"><strong>Invoice </strong></h4>
-                            <p>221 ,Baker Street</p>
+                            
+                            <h5 class="user-name">Name:{{$customer->customer_name}}</h5>
+                            <h6 class="user-name">Phone-number:{{$customer->phone_number}}</h6>
+                            <h6 class="user-name">Address:{{$customer->address}}</h6>
+                            
+
+                            <!-- <p>221 ,Baker Street</p>
                             <p>1800-234-124</p>
-                            <p>example@gmail.com</p>
+                            <p>example@gmail.com</p> -->
                         </div>
                     </div>
                     <div>

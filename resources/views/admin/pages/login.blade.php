@@ -61,8 +61,8 @@
                     </br></br>
                     <div class="wrapper">
                             <span class="group-btn">
-                                <!-- <a href="" class="btn btn-danger btn-md">login <i class="fa fa-sign-in"></i></a> -->
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                
+                                <button type="submit" class="btn btn-primary">LOGIN</button>
                             </span>
                     </div>
                 </form>
@@ -70,11 +70,6 @@
         </div>
     </div>
     </br></br></br>
-    <!--footer-->
-    <div class="footer text-white text-center">
-        <p>© 2020 Unique Login Form. All rights reserved | Design by <a href="https://freecss.tech">Free Css</a></p>
-    </div>
-    <!--//footer-->
 </div>
 </body>
 </html>

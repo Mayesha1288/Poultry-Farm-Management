@@ -33,7 +33,7 @@
         <li>
           <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.item')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fas fa-poll"></i>
+            <i class="fas fa-shopping-basket"></i>
             </div>
             <span class="nav-link-text ms-1">Item</span>
           </a>
@@ -91,17 +91,26 @@
 
             <i class="fas fa-clipboard"></i>
             </div>
-            <span class="nav-link-text ms-1">Records</span>
+            <span class="nav-link-text ms-1">Daily Status</span>
           </a>
         </li>
         @if(auth()->user()->role=='admin')
-        <li>
+        <!-- <li>
           <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.payment')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <!-- <i class="material-icons opacity-10">dashboard</i> -->
+           
             <i class="fas fa-user-friends"></i>
             </div>
             <span class="nav-link-text ms-1">Payment</span>
+          </a>
+        </li> -->
+
+        <li>
+          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.pos')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-balance-scale-right"></i>
+            </div>
+            <span class="nav-link-text ms-1">POS</span>
           </a>
         </li>
         <li>
@@ -113,11 +122,11 @@
           </a>
         </li>
         <li>
-          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.pos')}}">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.sale')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="fas fa-poll"></i>
             </div>
-            <span class="nav-link-text ms-1">POS</span>
+            <span class="nav-link-text ms-1">Report Generate</span>
           </a>
         </li>
        

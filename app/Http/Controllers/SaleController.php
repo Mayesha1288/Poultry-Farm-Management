@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Sale;
 use App\Models\Item;
+use App\Models\Customer;
 use App\Models\Saledetail;
 
 use Illuminate\Http\Request;
@@ -60,6 +61,9 @@ class SaleController extends Controller
  
       $sale=Sale::with('saleDetails')->find($sale_id);
       // dd($sale);
-      return view('admin.pages.saledetails',compact('sale'));
+      $customer_id=$sale->customer_name;
+      $customer=Customer::find($customer_id);
+      // dd($customer);
+      return view('admin.pages.saledetails',compact('sale','customer'));
     }
 }

@@ -48,5 +48,6 @@
   <br>
 
   <button type="submit" class="btn btn-primary">Let's Enter this</button>
+  <a href= "{{route ('admin.customer')}}"  class="btn btn-info">Back</a>
 </form>
 @endsection

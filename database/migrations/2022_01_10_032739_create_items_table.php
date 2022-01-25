@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->integer('type_id');
             $table->string('image');
             $table->string('description');
-            $table->integer('price');
+            $table->double('price');
             $table->string('unit');
             $table->timestamps();
         });
