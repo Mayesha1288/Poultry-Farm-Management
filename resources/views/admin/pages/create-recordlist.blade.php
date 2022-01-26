@@ -52,12 +52,7 @@
     <label for="exampleInputPassword1">Total Eggs Damaged</label>
     <input  required name="eggs_damaged"  type="number" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
- 
 
-  <!-- <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div> -->
   <button type="submit" class="btn btn-primary">Let's Enter this</button>
 </form>
 

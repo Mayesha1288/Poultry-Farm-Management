@@ -29,7 +29,7 @@
      padding-top: 12px;
      padding-bottom: 12px;
      text-align: left;
-     background-color: rgb(9, 24, 68);
+     background-color: rgb(126 15 115);
      color: white;
    }
 </style>
@@ -124,6 +124,8 @@
         <th>0</th>
         @endif
        <th> <a class="btn btn-primary" href="{{route('admin.sale.details',$sale->id)}}">View</a> </th>
+       <th> <a class="btn btn-danger" href="{{route('admin.sale.delete',$sale->id)}}">Delete</a> </th>
+       
  </tr>
     @endforeach
  </body>

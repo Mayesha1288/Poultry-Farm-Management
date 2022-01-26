@@ -57,11 +57,7 @@ class RecordController extends Controller
     {
 
         $record=Record::find($id);
-//        $product=Product::where('user_id',$id)->first();
-
    // dd($record);
-       
-//        dd($all_categories);
 if($record)
 {
         return view('admin.pages.edit-recordlist',compact('record'));

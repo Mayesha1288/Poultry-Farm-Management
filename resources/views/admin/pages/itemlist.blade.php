@@ -5,6 +5,19 @@
 
 <h2>Item List</h2>
 
+<form action="{{route('admin.item')}}">
+<div class="input-group rounded mt-3 mb-2">
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" name="search" placeholder="Search" arial-label="Search" aria-describedby="search-addon" />
+    <!-- <label class="form-label" for="form1">Search</label> -->
+  </div>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
+</form>
+
 <a href= "{{route ('admin.item.create')}}"  class="btn btn-primary">Add Item </a>
 
 <table class="table table-hover">

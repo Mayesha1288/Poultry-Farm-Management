@@ -27,10 +27,7 @@
 <input type="text" placeholder="Search.." name="search">
 <button type="submit">Submit</button>
   </li> -->
-</center>
-</ul>
-    </form>
-</center>
+
 
 <a href="{{route('admin.records.create',)}}" class="btn btn-success">Create Record list</a>
 

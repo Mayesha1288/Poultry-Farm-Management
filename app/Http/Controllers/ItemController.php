@@ -10,10 +10,16 @@ class ItemController extends Controller
 {
     public function item()
     {
-        $item=Item::with(['itemType','stock'])->get();
-        
-        // $item=Item::with('stock')->get();
-        return view('admin.pages.itemlist',compact('item'));
+        $key = request()->search;
+        if($key){
+            $item=Item::with(['itemType','stock'])
+           ->where('name','Like',"%{$key}%")->get();
+            return view('admin.pages.itemlist',compact('item'));
+        }else{
+            $item=Item::with(['itemType','stock'])->get();
+            return view('admin.pages.itemlist',compact('item'));
+        }
+     
     }
 
 
@@ -132,12 +138,6 @@ class ItemController extends Controller
        return redirect()->route('admin.item')->with('msg','Item Updated Successfully.');
    }
 
-   public function itemSearch()
-   {
-       // dd(request()->all());
-       $key = request()->search;
-       $items = Item::where('name','LIKE',"%{$key}%")->get();
-       return view('admin.pages.search-item',compact('items'));
-   }
+
 
 }

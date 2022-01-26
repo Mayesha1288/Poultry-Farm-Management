@@ -42,7 +42,7 @@ class SaleController extends Controller
             'sale_id'=>$sale->id,
             'item_id'=>$data['item_id'],
             'paid_amount'=>$sale->paid_amount,
-            'total_price'=>$sale->total,
+            'total_price'=>$data['total_price'],
             'quantity'=>$data['product_qty'],
         ]);
       }
@@ -57,13 +57,25 @@ class SaleController extends Controller
 
      public function saleDetails($sale_id)
     { 
-      
- 
-      $sale=Sale::with('saleDetails')->find($sale_id);
-      // dd($sale);
-      $customer_id=$sale->customer_name;
-      $customer=Customer::find($customer_id);
-      // dd($customer);
-      return view('admin.pages.saledetails',compact('sale','customer'));
+      $saledetails = Sale::with('saleDetails','customer')->find($sale_id);
+     
+      return view('admin.pages.saledetails',compact('saledetails'));
+    }
+
+    
+    public function saleDelete($sale_id)
+    {
+       Sale::find($sale_id)->delete();
+       return redirect()->back()->with('msg','Sale Deleted.');
+
+    } 
+
+
+
+
+    public function invoice($sale_id)
+    {
+      $sale=Sale::find($sale_id);
+        return view('admin.pages.invoice',compact('sale'));
     }
 }

@@ -20,6 +20,7 @@
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Status</th>
+        <th scope="col">Action</th>
         
         
     </tr>
@@ -34,7 +35,7 @@
     <th>{{$itemtypes->id}}</th>
         <th>{{$itemtypes->name}}</th>
         <th>{{$itemtypes->status}}</th>
-   
+         <th><a class="btn btn-info" href="{{route('admin.itemtype.edit',$itemtypes->id)}}">Update</a></th>
     </tr>
     @endforeach
 </tbody>

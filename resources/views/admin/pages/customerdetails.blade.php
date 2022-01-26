@@ -7,7 +7,7 @@
     <h1>Customer Details</h1>
 
     <p> Customer ID :     {{$customer->id}}</p>  
-<p> Customer Name :       {{$customer->customer_name}}}</p>
+<p> Customer Name :       {{$customer->customer_name}}</p>
 <p> Address :        {{$customer->address}}</p>
 <p> Phone number :     {{$customer->phone_number}}</p>
 <p> Customer Description:      {{$customer->customer_description}}</p>

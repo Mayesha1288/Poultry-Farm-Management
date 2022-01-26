@@ -198,7 +198,8 @@
                                       
                                       
                                       @php
-                                        $total = 0
+                                        $total = 0;
+                                        $ub_total = 0
                                       @endphp
                                  @if($carts)
                                    @foreach($carts as $key=>$data)
@@ -220,7 +221,8 @@
                                         </td>
                                       </tr>
                                       @php
-                                      $total = $total + ($data['price'] * $data['product_qty'])
+                                      $total = $total + ($data['price'] * $data['product_qty']);
+                                     
                                       @endphp
                                     @endforeach
                                     @endif
@@ -236,6 +238,7 @@
                             <h3 class="heading">Total : {{$total}} Taka </h3>
                            <h3>Paid : <input type="text" name="paid_amount" value="{{$total}}"></h3>
                            <input type="hidden" name="total" value="{{$total}}">
+                           
                             
                         </div>
         <div class="col-lg-4">

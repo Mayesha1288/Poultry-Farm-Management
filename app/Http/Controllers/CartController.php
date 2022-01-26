@@ -27,6 +27,7 @@ class CartController extends Controller
                     'name' => $item->name,
                     'price' => $item->price,
                     'product_qty' => 1,
+                    'total_price' =>$item->price*1,
                 ]
             ];
             session()->put('cart', $cartData);
@@ -43,6 +44,7 @@ class CartController extends Controller
                 'name' => $item->name,
                 'price' => $item->price,
                 'product_qty' => 1,
+                'total_price' =>$item->price*1,
             ];
 
             session()->put('cart', $cartExist);
@@ -55,6 +57,7 @@ class CartController extends Controller
         //action: increase product quantity (quantity+1)
 
         $cartExist[$id]['product_qty']++;
+        $cartExist[$id]['total_price'] = $cartExist[$id]['price']*$cartExist[$id]['product_qty'] ;
 
       session()->put('cart', $cartExist);
 
@@ -71,6 +74,7 @@ class CartController extends Controller
         }
         else {
             $cart[$id]['product_qty'] = $request->input('qty');
+            $cart[$id]['total_price'] = $request->input('qty')*$cart[$id]['price'];
             session()->put('cart', $cart);
             return redirect()->back();
         }

@@ -79,6 +79,8 @@ Route::get('admin/hen/search',[HenController::class,'henSearch'])->name('admin.h
 Route::get('/admin/itemtype',[ItemTypeController::class,'itemtype'])->name('admin.itemtype');
 Route::get('/admin/itemtype/create',[ItemTypeController::class,'typelist'])->name('admin.itemtype.create');
 Route::post('/admin/itemtype/store',[ItemTypeController::class,'store'])->name('admin.itemtype.store');
+Route::get('admin/itemtype/edit/{itemtype_id}',[ItemTypeController::class,'itemtypeEdit'])->name('admin.itemtype.edit');
+Route::put('admin/itemtype/update/{itemtype_id}',[ItemTypeController::class,'itemtypeUpdate'])->name('admin.itemtype.update');
 
 
 // all routes of item
@@ -88,9 +90,9 @@ Route::get('/admin/item/create',[ItemController::class,'itemlist'])->name('admin
 Route::post('/admin/item/store',[ItemController::class,'store'])->name('admin.item.store');
 Route::get('admin/view/{item_id}',[ItemController::class,'itemDetails'])->name('admin.item.details');
 Route::get('admin/delete/{item_id}',[ItemController::class,'itemDelete'])->name('admin.item.delete');
-Route::get('admin/record/edit/{item_id}',[ItemController::class,'itemEdit'])->name('admin.item.edit');
-Route::put('admin/record/update/{item_id}',[ItemController::class,'itemUpdate'])->name('admin.item.update');
-Route::get('admin/record/search',[ItemController::class,'recordSearch'])->name('admin.record.search');
+Route::get('admin/item/edit/{item_id}',[ItemController::class,'itemEdit'])->name('admin.item.edit');
+Route::put('admin/item/update/{item_id}',[ItemController::class,'itemUpdate'])->name('admin.item.update');
+
 
 
 // all routes of hen vaccine
@@ -162,6 +164,10 @@ Route::get('/admin/customer',[CustomerController::class,'customer'])->name('admi
 Route::get('/admin/customer/create',[CustomerController::class,'createcustomer'])->name('admin.customer.create');
 Route::post('admin/customer/store',[CustomerController::class,'store'])->name('admin.customer.store');
 Route::get('customer/view/{customer_id}',[CustomerController::class,'customerDetails'])->name('admin.customer.details');
+Route::get('admin/customer/delete/{customer_id}',[CustomerController::class,'customerDelete'])->name('admin.customer.delete');
+Route::get('admin/customer/edit/{customer_id}',[CustomerController::class,'customerEdit'])->name('admin.customer.edit');
+Route::put('admin/customer/update/{customer_id}',[CustomerController::class,'customerUpdate'])->name('admin.customer.update');
+Route::get('admin/customer/search',[CustomerController::class,'customerSearch'])->name('admin.customer.search');
 
 
 
@@ -190,6 +196,12 @@ Route::get('/admin/sales',[SaleController::class,'salelist'])->name('admin.sale'
 Route::get('/admin/sale/create',[SaleController::class,'addsale'])->name('admin.sale.create');
 Route::post('/admin/sale/store',[SaleController::class,'store'])->name('admin.sale.store');
 Route::get('admin/sale/view/{sale_id}',[SaleController::class,'saleDetails'])->name('admin.sale.details');
+Route::get('admin/sale/delete/{sale_id}',[SaleController::class,'saleDelete'])->name('admin.sale.delete');
+
+
+
+
+
 
 Route::get('/admin/payment',[PaymentController::class,'payment'])->name('admin.payment');
 Route::get('/admin/payment/create',[PaymentController::class,'createpayment'])->name('admin.payment.create');
@@ -203,6 +215,12 @@ Route::get('/get-cart',[CartController::class,'getcart'])->name('cart.get');
 Route::get('/clear-cart',[CartController::class,'clearCart'])->name('cart.clear');
 Route::post('/update-cart',[CartController::class,'updateCart'])->name('cart.update');
 Route::post('/update-paid',[CartController::class,'paid'])->name('cart.paid');
+
+
+
+Route::get('/admin/report',[ReportController::class,'salesreport'])->name('admin.report');
+
+
 
     });
 });
