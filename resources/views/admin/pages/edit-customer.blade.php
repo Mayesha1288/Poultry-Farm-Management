@@ -24,7 +24,7 @@
   @endif
 
 
-<form  action="{{route('admin.customer.store')}}" method="post" >
+<form  action="{{route('admin.customer.update',$customer)}}" method="post" >
   @csrf
   @method('PUT')
  <div class="form-group">

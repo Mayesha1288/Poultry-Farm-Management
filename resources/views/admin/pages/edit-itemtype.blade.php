@@ -23,7 +23,7 @@
   @endif
 
 
-<form  action="{{route('admin.itemtype.store')}}" method="post" > 
+<form  action="{{route('admin.itemtype.update',$itemtype->id)}}" method="post" > 
   @method('put')
   @csrf
 

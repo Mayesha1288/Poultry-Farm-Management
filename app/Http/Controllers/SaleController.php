@@ -12,10 +12,18 @@ class SaleController extends Controller
 {
     public function salelist()
     {
+         $key = request()->search;
+      if($key){
+        $sale = Item::where('customer_name','Like',"%{$key}%")->get();
+        $sales = Sale::with('customer')->orderBy('id','desc')->get();
+       return view('admin.pages.salelist',compact('sale','sales'));
+
+      }
+      else{
          $sale = Item::all();
          $sales = Sale::with('customer')->orderBy('id','desc')->get();
-    //    dd($sale);
         return view('admin.pages.salelist',compact('sale','sales'));
+      }
     }
 
 

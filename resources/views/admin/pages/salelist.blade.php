@@ -37,7 +37,18 @@
 <div class="heading">
   <h2>Sale List</h2>
 </div>
+<form action="{{route('admin.customer')}}">
+<div class="input-group rounded mt-3 mb-2">
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" name="search" placeholder="Search" arial-label="Search" aria-describedby="search-addon" />
+    <!-- <label class="form-label" for="form1">Search</label> -->
+  </div>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
 
+</form>
 <br>
 <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
