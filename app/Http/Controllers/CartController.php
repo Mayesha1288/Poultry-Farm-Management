@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Item;
 use App\Models\Cart;
+use App\Models\Item;
 use App\Models\Sale;
+use App\Models\Stock;
+use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
@@ -24,10 +25,12 @@ class CartController extends Controller
             $cartData = [
                 $id => [
                     'item_id'=>$item->id,
+                    'no_of_item'=> request()->quantity,
                     'name' => $item->name,
                     'price' => $item->price,
                     'product_qty' => 1,
                     'total_price' =>$item->price*1,
+                    
                 ]
             ];
             session()->put('cart', $cartData);
@@ -41,6 +44,7 @@ class CartController extends Controller
         {
             $cartExist[$id] = [
                 'item_id'=>$item->id,
+                 'no_of_item'=> request()->quantity,
                 'name' => $item->name,
                 'price' => $item->price,
                 'product_qty' => 1,
@@ -66,23 +70,31 @@ class CartController extends Controller
     }
      
     public function updateCart(Request $request){
+        // dd($request->all());
         $id= $request->input('cart_id');
         $cart = session('cart');
-        $product_quantity = Item::find($id);
-        if ($request->quantity > $product_quantity->quantity) {
+        $product_quantity = Stock::where('stock_item',$id)->first();
+        // dd($product_quantity);
+        if ($request->quantity > $product_quantity->stock_quantity) {
             return redirect()->route('product.cart');
         }
         else {
             $cart[$id]['product_qty'] = $request->input('qty');
+            $cart[$id]['no_of_item'] = $request->input('no_of_item');
             $cart[$id]['total_price'] = $request->input('qty')*$cart[$id]['price'];
             session()->put('cart', $cart);
+            $product_quantity->update([
+                'stock_quantity'=>$product_quantity->stock_quantity - $request->no_of_item
+            ]);
             return redirect()->back();
+
         }
 
     }
 
     public function getCart()
     {
+        
        $carts= session()->get('cart');
         return view('admin.pages.pos',compact('carts'));
     }
@@ -93,9 +105,20 @@ class CartController extends Controller
         return redirect()->back()->with('message','Cart cleared successfully.');
 
     }
-    public function paid(Request $request)
+    public function updatequantity(Request $request)
     {
-        // dd($request->all());
+        $id= $request->input('cart_id');
+        $cart = session('cart');
+        $quantity = Item::find($id);
+        if ($request->quantity) {
+            return redirect()->route('product.cart');
+        }
+        else {
+            $cart[$id]['quantity'] = $request->input('quantity');
+            // $cart[$id]['total_price'] = $request->input('qty')*$cart[$id]['price'];
+            session()->put('cart', $cart);
+            return redirect()->back();
+        }
         
 
     }

@@ -35,6 +35,11 @@ class SaleController extends Controller
      }
      public function store(Request $request)
      {
+
+      $request->validate([
+        
+        'customer_name'=>'required',
+    ]);
     //  dd($request->all());
       //   the name which is written in the databaase table then the name written in the form
      $sale = Sale::create([
@@ -58,6 +63,7 @@ class SaleController extends Controller
     if($sale){
       session()->forget('cart');
     }
+    
     return redirect()->back()->with('msg','Sales Inserted  successfully.');
      }
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\ItemTypeController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\POSController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ReportController;
 
 
 
@@ -202,23 +203,17 @@ Route::get('admin/sale/delete/{sale_id}',[SaleController::class,'saleDelete'])->
 
 
 
-
-Route::get('/admin/payment',[PaymentController::class,'payment'])->name('admin.payment');
-Route::get('/admin/payment/create',[PaymentController::class,'createpayment'])->name('admin.payment.create');
-Route::post('admin/payment/store',[PaymentController::class,'store'])->name('admin.payment.store');
-
-
 // route of cart
 
 Route::get('/add-to-cart/{id}',[CartController::class,'addTocart'])->name('cart.add');
 Route::get('/get-cart',[CartController::class,'getcart'])->name('cart.get');
 Route::get('/clear-cart',[CartController::class,'clearCart'])->name('cart.clear');
 Route::post('/update-cart',[CartController::class,'updateCart'])->name('cart.update');
-Route::post('/update-paid',[CartController::class,'paid'])->name('cart.paid');
+Route::post('/update-quantity',[CartController::class,'updatequantity'])->name('cart.quantity');
 
 
 
-Route::get('/admin/report',[ReportController::class,'salesreport'])->name('admin.report');
+Route::get('/admin/report',[ReportController::class,'report'])->name('admin.sale');
 
 
 

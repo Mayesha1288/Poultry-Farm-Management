@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Item;
 use App\Models\Hen;
 use App\Models\Food;
 use App\Models\Vaccine;
@@ -12,7 +12,7 @@ class HenController extends Controller
 {
    public function henlist()
    {
-       $henlist=Hen::all();
+       $henlist=Item::where('type_id',1)->get();
        return view('admin.pages.hen-list',compact('henlist'));
    }
    public function createhenlist()

@@ -1,6 +1,20 @@
 @extends ('admin.welcome')
 
 @section('contents')
+
+
+
+@if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div>
+                <p class="alert alert-danger">{{$error}}</p>
+            </div>
+        @endforeach
+    @endif
+
+    @if(session()->has('msg'))
+        <p class="alert alert-success">{{session()->get('msg')}}</p>
+  @endif
 <center>
 <h2> Point of Sale</h2>
 <center>
@@ -180,7 +194,7 @@
 
     
         <div class="row"style="margin-top: 10px;" >
-                <div style="width:50%;">
+                <div style="width:53%;">
                     <div class="pricingTable">
                         
                         <ul class="pricing-content">
@@ -191,6 +205,7 @@
                                          <th>Name</th>
                                          <th>Price</th>
                                          <th>Qty</th>
+                                         <th>Amount</th>
                                          <th>Sub Total</th>
                                      </tr>
                                  </thead>
@@ -210,11 +225,16 @@
                                               <form action="{{route('cart.update')}}" method="post">
                                                   @csrf
                                                <input hidden value="{{$key}}" name="cart_id">
+                                              <input value="{{$data['no_of_item'] ?? ''}}" type="text" name="no_of_item" maxlength="3" size="3">
+                                              <!-- <button type="submit" class="btn btn-info"><i class="material-icons">add_shopping_cart</i></button>   -->
+
+                                              <!-- <input size="4" value="{{$data['product_qty']}}" type="number" name="qty"> -->
+                                            
                                               <input value="{{$data['product_qty']}}" type="text" id="pin" name="qty" maxlength="4" size="4">
                                               <button type="submit" class="btn btn-info"><i class="material-icons">add_shopping_cart</i></button>
 
                                               </form>
-                                              <!-- <input size="4" value="{{$data['product_qty']}}" type="number" name="qty"> -->
+                                              
                                             </td>
                                           <td>{{$data['price'] * $data['product_qty']}}</td>
                                           <td>
@@ -248,12 +268,14 @@
              Add
             </button>
             </h4>
-            <select  required class="form-control" name="customer_name">
-              <option>Select Customer</option>
+            <select  class="form-control" name="customer_name">
+              <option value="">Select Customer</option>
               @foreach($customer as $customers)
               <option value="{{$customers->id}}">{{$customers->customer_name}} </option>
               @endforeach
             </select>     
+
+           
           </div>  
         </div>
                         <!-- <input type="hiddend" name="total" value="{{$total}}">   -->

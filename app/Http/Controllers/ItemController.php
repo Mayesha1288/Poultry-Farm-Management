@@ -113,8 +113,9 @@ class ItemController extends Controller
    public function itemUpdate(Request $request,$id)
    {
        $items=Item::find($id);
+    //    dd($items);
 
-       $filename = '';
+       $filename = $items->image;
 //    dd($filename());
         if ($request->hasFile('image'))
         {

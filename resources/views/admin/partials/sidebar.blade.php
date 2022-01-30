@@ -95,15 +95,7 @@
           </a>
         </li>
         @if(auth()->user()->role=='admin')
-        <!-- <li>
-          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.payment')}}">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-           
-            <i class="fas fa-user-friends"></i>
-            </div>
-            <span class="nav-link-text ms-1">Payment</span>
-          </a>
-        </li> -->
+        
 
         <li>
           <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.pos')}}">

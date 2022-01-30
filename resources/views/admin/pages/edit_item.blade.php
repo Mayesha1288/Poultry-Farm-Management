@@ -48,7 +48,7 @@
   </div> -->
     <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Upload Image</label>
-            <input required name="image" value="{{$items->image}}" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input  name="image" value="{{$items->image}}" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
 
    <div class="form-group">

@@ -32,7 +32,7 @@
 <div class="container">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 body-main">
+            <div class="col-lg-12 body-main">
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-4"> <img class="img" alt="Invoce Template" src="http://pngimg.com/uploads/shopping_cart/shopping_cart_PNG59.png" /> </div>
@@ -85,23 +85,25 @@
 
 
 
-                                <tr>
-                                    <td class="text-right">
+                               
+                
+                            </tbody>
+                        </table>
+
+                        <div style="display:flex; justify-content: space-between;">
+                                    <div class="text-right">
                                         <p> <strong>Total Amount: </strong> </p>
                                         <p> <strong>Paid Amount: </strong> </p>
                                         <p> <strong>Return: </strong> </p>
                                    
-                                    </td>
-                                    <td>
+</div>
+                                    <div class="text-left" style="padding-right: 55px;">
                                         <p> <strong>BDT {{$saledetails->total}} </strong> </p>
                                         <p> <strong>BDT {{$saledetails->paid_amount}} </strong> </p>
                                         <p> <strong>BDT {{$saledetails->paid_amount-$saledetails->total}} </strong> </p>
                             
-                                    </td>
-                                </tr>
-                
-                            </tbody>
-                        </table>
+</div>
+</div>
                     </div>
                     <div>
                         <div class="col-md-12">

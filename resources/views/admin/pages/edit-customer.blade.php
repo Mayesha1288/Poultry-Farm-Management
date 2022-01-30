@@ -29,7 +29,7 @@
   @method('PUT')
  <div class="form-group">
     <label for="exampleInputPassword1">Customer Name</label>
-    <input required name="name" value="{{$customer->name}}" type="text"  class="form-control" id="exampleInputPassword1" placeholder="Customer Name">
+    <input required name="name" value="{{$customer->customer_name}}" type="text"  class="form-control" id="exampleInputPassword1" placeholder="Customer Name">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Customer Address</label>
@@ -37,7 +37,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Phone Number</label>
-    <input required name="number" value="{{$customer->number}}" type="number" class="form-control" id="exampleInputPassword1" placeholder="Phone Number">
+    <input required name="number" value="{{$customer->phone_number}}" type="number" class="form-control" id="exampleInputPassword1" placeholder="Phone Number">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Customer description</label>
