@@ -28,7 +28,7 @@
      text-align: center
  }
 </style>
-
+<div id="PrintTableArea">
 <div class="container">
     <div class="container">
         <div class="row">
@@ -81,12 +81,6 @@
                              
                             @endforeach
 
-
-
-
-
-                               
-                
                             </tbody>
                         </table>
 
@@ -100,7 +94,17 @@
                                     <div class="text-left" style="padding-right: 55px;">
                                         <p> <strong>BDT {{$saledetails->total}} </strong> </p>
                                         <p> <strong>BDT {{$saledetails->paid_amount}} </strong> </p>
+                                        @php
+                                        $due = $saledetails->total - $saledetails->paid_amount
+                                        @endphp
+                                        @if($due<=0)
                                         <p> <strong>BDT {{$saledetails->paid_amount-$saledetails->total}} </strong> </p>
+                                        @else
+                                        <p>{{$due}}</p>
+                                        <h6 >
+                                            You need to give more money .Should return me the amount shown in Return as soon as possible
+                                        </h6>
+                                        @endif
                             
 </div>
 </div>
@@ -114,5 +118,16 @@
             </div>
         </div>
     </div>
+ </div>
 </div>
+ <button  class="btn btn-primary" type="button" onClick="PrintDiv('PrintTableArea');" >Print</button>
+ <script language="javascript">
+    function PrintDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+ </script>
 @endsection

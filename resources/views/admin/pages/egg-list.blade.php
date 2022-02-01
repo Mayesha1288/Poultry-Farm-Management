@@ -20,9 +20,9 @@
     <thead>
     <tr>
         <th scope="col">Id</th>
-        <th scope="col"> Type</th>
+        <th scope="col"> Name</th>
         <th scope="col">Price</th>
-        <th scope="col">Quantity</th>
+        <th scope="col">Unit</th>
         <th> Image</th>
         <th scope="col">Action</th>
     </tr>
@@ -34,9 +34,9 @@
        @foreach($eggs as $egg)
     <tr>
         <th > {{$egg->id}}</th>
-        <th>{{$egg->eggType->eggtype}}</th>
+        <th > {{$egg->name}}</th>
         <th>{{$egg->price}}</th>
-        <th>{{$egg->quantity}}</th>
+        <th>{{$egg->unit}}</th>
         <th>
                     <img src="{{url('/uploads/'.$egg->image)}}" width="100px" alt="egg image">
                 </th>

@@ -18,7 +18,8 @@ class CartController extends Controller
             return redirect()->back()->with('error','No item found.');;
         }
         $cartExist=session()->get('cart');
-
+        
+        
         if(!$cartExist) {
             //case 01: cart is empty.
             //  action: add product to cart
@@ -70,13 +71,15 @@ class CartController extends Controller
     }
      
     public function updateCart(Request $request){
-        // dd($request->all());
+        // dd($request->all());    
         $id= $request->input('cart_id');
+        // dd($id);
         $cart = session('cart');
+        
         $product_quantity = Stock::where('stock_item',$id)->first();
         // dd($product_quantity);
-        if ($request->quantity > $product_quantity->stock_quantity) {
-            return redirect()->route('product.cart');
+        if ($request->qty > $product_quantity->stock_quantity) {
+            return redirect()->route('admin.pos')->with('error', 'Out of Stock...Sorry!!');
         }
         else {
             $cart[$id]['product_qty'] = $request->input('qty');

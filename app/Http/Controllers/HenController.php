@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Itemtype;
 use App\Models\Item;
 use App\Models\Hen;
 use App\Models\Food;
@@ -115,21 +115,21 @@ class HenController extends Controller
 
 //        collection= get(), all()====== read with loop (foreach)
 //       object= first(), find(), findOrFail(),======direct
-     $hen=Hen::find($hen_id);
+     $item=Item::find($hen_id);
 //      $product=Product::where('id',$product_id)->first();
-       return view('admin.pages.hendetails',compact('hen'));
+       return view('admin.pages.hendetails',compact('item'));
    }
 
    public function henDelete($hen_id)
    {
-      Hen::find($hen_id)->delete();
+      Item::find($hen_id)->delete();
       return redirect()->back()->with('success','Hen Deleted.');
    }
 
    public function henEdit($id)
     {
-
-        $hen=Hen::find($id);
+        $itemtype=Itemtype::all();
+        $hen=Item::find($id);
 //        $product=Product::where('user_id',$id)->first();
 
    // dd($record);
@@ -138,13 +138,13 @@ class HenController extends Controller
 if($hen){
 
 
-        return view('admin.pages.edit-henlist',compact('hen'));
+        return view('admin.pages.edit-henlist',compact('hen','itemtype'));
 }
 }
 
     public function henUpdate(Request $request,$id)
     {
-        $hen=Hen::find($id);
+        $hen=Item::find($id);
         $filename = $hen->image;
         if ($request->hasFile('image')) {
             $file = $request->file('image');

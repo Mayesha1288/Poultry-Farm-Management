@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Item;
 use App\Models\Egg;
 use App\Models\Eggtype;
 use Illuminate\Http\Request;
@@ -16,8 +16,9 @@ class EggController extends Controller
             $eggs = Egg::with('eggType')->whereLike(['eggType.eggtype','price'], $key)->get();
             return view ('admin.pages.egg-list',compact('eggs'));
         }
-      
-        $eggs=Egg::with('eggType')->get();
+        
+        // $eggs=Egg::with('eggType')->get();
+        $eggs=Item::where('type_id',2)->get();
         return view ('admin.pages.egg-list',compact('eggs'));
     }
     public function createegglist()
@@ -51,7 +52,7 @@ class EggController extends Controller
  
  //        collection= get(), all()====== read with loop (foreach)
  //       object= first(), find(), findOrFail(),======direct
-      $egg=Egg::find($egg_id);
+      $egg=Item::find($egg_id);
 
  //      $product=Product::where('id',$product_id)->first();
         return view('admin.pages.eggdetails',compact('egg'));
@@ -59,7 +60,7 @@ class EggController extends Controller
  
     public function eggDelete($egg_id)
     {
-       Egg::find($egg_id)->delete();
+       Item::find($egg_id)->delete();
        return redirect()->back()->with('msg','Egg Deleted.');
     }
    

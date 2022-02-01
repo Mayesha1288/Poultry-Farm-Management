@@ -1,7 +1,7 @@
 @extends ('admin.welcome')
 
 @section('contents')
-<a href="{{route('admin.hens.create')}}" class="btn btn-success">Create Hen list</a>
+<!-- <a href="{{route('admin.hens.create')}}" class="btn btn-success">Create Hen list</a> -->
 <a href="{{route('admin.hens.vaccine')}}" class="btn btn-primary">Check the Vaccine </a>
 <a href="{{route('admin.hens.food')}}" class="btn btn-warning">Check the Food </a>
 <a href= "{{route ('admin.dashboard')}}"  class="btn btn-info">Back</a>
@@ -16,10 +16,9 @@
     <thead>
     <tr>
         <th scope="col">Id</th>
-        <th scope="col">Type</th>
-        <th scope="col">Weight</th>
+        <th scope="col">Name</th>
         <th scope="col">Price/kg</th>
-        <th scope="col">Quantity</th>
+        <th scope="col">Unit</th>
         <th scope="col">Description</th>
         <th>Image</th>
         <th scope="col">Action</th>
@@ -32,10 +31,9 @@
       @foreach($henlist as $hen)
     <tr>
         <th > {{$hen->id}}</th>
-        <th>{{$hen->type}}</th>
-        <th>{{$hen->weight}}</th>
+        <th>{{$hen->name}}</th>
         <th>{{$hen->price}}</th>
-        <th >{{$hen->quantity}}</th>
+        <th >{{$hen->unit}}</th>
         <th >{{$hen->description}}</th>
         <th>
                     <img src="{{url('/uploads/'.$hen->image)}}" width="100px" alt="hen image">

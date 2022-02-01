@@ -5,20 +5,22 @@
 
 <div>
     <form>
-        <div class="input-group rounded mt-3 mb-2">
+        <div class="input-group rounded mt-3 mb-2" style="width:90%;">
             <input type="date" class="form-control rounded" value="{{request()->from_date}}" name="from_date" placeholder="Search" aria-label="Search"
                    aria-describedby="search-addon" />
             <input type="date" class="form-control rounded" value="{{request()->to_date}}" name="to_date" placeholder="Search" aria-label="Search"
                    aria-describedby="search-addon" />
-            <span class="input-group-text border-0" id="search-addon">
-    <button type="submit">submit</button>
-  </span>
+          <div> 
+    <button style="margin-left:10px;" class="btn btn-primary" type="submit">submit</button>
+
+</div>
+
         </div>
     </form>
 </div>
 <div id="PrintTableArea">
     <center>
-        <h1>Report</h1>
+        <h1> Sales Report</h1>
 </center>
 
 @if ($errors->any())
@@ -27,9 +29,10 @@
      @endforeach
  @endif
 <body>
- <table id="customers">
+<button  class="btn btn-primary" type="button" onClick="PrintDiv('PrintTableArea');" >Print</button>
+ <table class="table">
   <thead>
-    <tr>
+  <tr>
       <th>#ID</th>
       <th>Customer Name</th>
       <th>Total</th>
@@ -37,8 +40,9 @@
       <th>Due</th>
       <th>Return</th>
   
-    </tr>  
+    </tr>
   </thead>
+  <tbody>
   @foreach($sales as $sale)
     <tr>
         <th>{{$sale->id}}</th>
@@ -63,7 +67,8 @@
        
  </tr>
     @endforeach
- </table><br>
+  </tbody>
+</table>
  </body>
 </div>
 @endsection

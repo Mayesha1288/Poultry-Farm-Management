@@ -12,6 +12,10 @@
         @endforeach
     @endif
 
+    @if(session()->has('error'))
+        <p class="alert alert-danger">{{session()->get('error')}}</p>
+  @endif
+
     @if(session()->has('msg'))
         <p class="alert alert-success">{{session()->get('msg')}}</p>
   @endif
@@ -194,7 +198,7 @@
 
     
         <div class="row"style="margin-top: 10px;" >
-                <div style="width:53%;">
+                <div style="width:56%;">
                     <div class="pricingTable">
                         
                         <ul class="pricing-content">
@@ -204,8 +208,8 @@
                                      <tr>
                                          <th>Name</th>
                                          <th>Price</th>
-                                         <th>Qty</th>
-                                         <th>Amount</th>
+                                         <th>Qty    Amount</th>
+                                         <!-- <th>Amount</th> -->
                                          <th>Sub Total</th>
                                      </tr>
                                  </thead>

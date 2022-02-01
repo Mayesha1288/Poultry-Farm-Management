@@ -30,38 +30,39 @@
   @csrf
   @method('put')
   <div class="form-group">
-    <label for="exampleInputEmail1">Hen Type</label>
-    <select  required name="type" value="{{$hen->type}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hen type">
-    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-    <option > broiler</option>
-        <option > deshi</option>
-        <option > pakistani</option>
-        <option > layer</option>
-        <option > sonalika</option>
-</select>
+    <label for="exampleInputEmail1">Name</label>
+    <input required name="name" value="{{$hen->name}}" type="text"  class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Hen Weight</label>
-    <input required name="weight" value="{{$hen->weight}}" type="number" step="0.01" class="form-control" id="exampleInputPassword1" placeholder="Hen Weight">
+    <label for="exampleInputPassword1">Type ID</label>
+    <select name="type_id" class="form-control" id="exampleInputEmail1"> 
+      @foreach($itemtype as $itemtype)
+        
+        <option value="{{$itemtype-> id}}">{{$itemtype->name}} </option>
+        @endforeach
+    </select>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Hen Price</label>
-    <input  required name="price" value="{{$hen->price}}" type="number" class="form-control" id="exampleInputPassword1" placeholder="Hen Price">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Hen Quantity</label>
-    <input required name="quantity"  value="{{$hen->quantity}}"type="number" class="form-control" id="exampleInputPassword1" placeholder="">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Hen Description</label>
-    <input required name="description" value="{{$hen->description}}" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-  </div>
+  
+    <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Upload Image</label>
+            <input  name="image" value="{{$hen->image}}" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
 
-  <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Upload Hens Image</label>
-            <input name="image" value='{{$hen->image}}' type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <input required name="description" value="{{$hen->description}}" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+   </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Price</label>
+    <input required name="price" value="{{$hen->price}}" type="number"  step="0.01" class="form-control" id="exampleInputPassword1" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Unit</label>
+    <input required name="unit" value="{{$hen->unit}}" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+  </div>
+  <br>
   <button type="submit" class="btn btn-primary">Let's Enter this</button>
+  <a href= "{{route ('admin.hens')}}"  class="btn btn-info">Back</a>
 </form>
 
 @endsection

@@ -7,13 +7,13 @@
 
 <div id="PrintTableArea">
    
-<p> Type : {{$hen->type}}</p>
-<p>Weight: {{$hen->weight}}</p>
-<p>Price/kg: <h4><span style="color: orange">BDT {{$hen->price}}</span></h4> </p>
-<p>Quantity: {{$hen->quantity}}</p>
-<p>Description: {{$hen->description}}</p>
+<p> Name : {{$item->name}}</p>
+
+<p>Price/kg: <h4><span style="color: orange">BDT {{$item->price}}</span></h4> </p>
+<p>Unit: {{$item->unit}}</p>
+<p>Description: {{$item->description}}</p>
 <p>
-        <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$hen->image)}}" alt="hen image">
+        <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$item->image)}}" alt="hen image">
     </p>
 
     <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>

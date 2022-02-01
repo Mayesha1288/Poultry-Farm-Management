@@ -213,7 +213,7 @@ Route::post('/update-quantity',[CartController::class,'updatequantity'])->name('
 
 
 
-Route::get('/admin/report',[ReportController::class,'report'])->name('admin.sale');
+Route::get('/admin/report',[ReportController::class,'report'])->name('admin.report');
 
 
 

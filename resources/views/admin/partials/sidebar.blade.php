@@ -114,7 +114,7 @@
           </a>
         </li>
         <li>
-          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.sale')}}">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.report')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="fas fa-poll"></i>
             </div>

@@ -15,13 +15,12 @@ class CreateHensTable extends Migration
     {
         Schema::create('hens', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->double('weight');
-            $table->integer('price');
-            $table->integer('quantity');
-            $table->string('description');
+            $table->string('name');
+            $table->integer('type_id');
             $table->string('image');
-            $table->double('total')->nullable();
+            $table->string('description');
+            $table->double('price');
+            $table->string('unit');
             $table->timestamps();
         });
     }
