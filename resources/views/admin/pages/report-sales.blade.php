@@ -39,6 +39,7 @@
       <th>Paid Amount</th>
       <th>Due</th>
       <th>Return</th>
+      <th>Date</th>
   
     </tr>
   </thead>
@@ -63,6 +64,7 @@
         @else
         <th>0</th>
         @endif
+        <th>{{$sale->created_at}}</th>
       
        
  </tr>

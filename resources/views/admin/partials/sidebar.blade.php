@@ -102,7 +102,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="fas fa-balance-scale-right"></i>
             </div>
-            <span class="nav-link-text ms-1">POS</span>
+            <span class="nav-link-text ms-1">Point of Sale (POS)</span>
           </a>
         </li>
         <li>

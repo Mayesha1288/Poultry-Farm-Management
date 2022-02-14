@@ -178,7 +178,7 @@ Route::get('/admin/records',[RecordController::class,'recordlist'])->name('admin
 Route::get('/admin/records/create',[RecordController::class,'createrecordlist'])->name('admin.records.create');
 Route::post('admin/records/store',[RecordController::class,'store'])->name('admin.records.store');
 Route::get('admin/record/view/{record_id}',[RecordController::class,'recordDetails'])->name('admin.record.details');
-Route::get('admin/delete/{record_id}',[RecordController::class,'recordDelete'])->name('admin.record.delete');
+Route::get('admin/record/delete/{record_id}',[RecordController::class,'recordDelete'])->name('admin.record.delete');
 Route::get('admin/record/edit/{record_id}',[RecordController::class,'recordEdit'])->name('admin.record.edit');
 Route::put('admin/record/update/{record_id}',[RecordController::class,'recordUpdate'])->name('admin.record.update');
 Route::get('admin/record/search',[RecordController::class,'recordSearch'])->name('admin.record.search');

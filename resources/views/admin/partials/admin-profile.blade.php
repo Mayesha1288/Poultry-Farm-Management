@@ -26,8 +26,13 @@
 			<div class="col-md-6">
 				<div class="bio-content">
 					<h1>Hi there, I'm MAISHAR MOSTARI ZENIA</h1>
-					<h6>I am a fresh web designer and I create custom web designs. I'm skilled at writing well-designed, testable and efficient code using current best practices in Web development. I'm a fast learner, hard worker and team player who is proficient in making creative and innovative web pages.</h6>
-					<p>P.S I have no special talent, I'm just passionately curious ;)</p>
+					<h6>I am a fresh web developer . I'm skilled at writing well-designed, testable and efficient code using current best practices in Web development. I'm a fast learner, hard worker and team player who is proficient in making creative and innovative web pages.</h6>
+					<h5>I am currently helping with my uncles poultry farm in gazipur </h5>
+					<h5>If u need to contact me please contact using <br> mayeshamustare112@gmail.com
+					<br>or use the mobile to contact me 01757583464 
+
+					</h5>
+					<h6>P.S I have no special talent, I'm just passionately curious about life and cultures ;)</h6>
 				</div>
 			</div>
 		</div>	

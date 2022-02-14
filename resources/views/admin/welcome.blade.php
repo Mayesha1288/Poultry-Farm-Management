@@ -62,17 +62,9 @@
             <div class="col-lg-6">
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Maishar Mostari Zenia</a>
+                  <a href="{{route('admin.profile')}}" class="nav-link text-muted" target="_blank">Maishar Mostari Zenia</a>
                 </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <!-- <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li> -->
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">Contact Us</a>
-                </li>
+               
               </ul>
             </div>
           </div>

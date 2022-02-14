@@ -72,7 +72,6 @@ class SaleController extends Controller
      public function saleDetails($sale_id)
     { 
       $saledetails = Sale::with('saleDetails','customer')->find($sale_id);
-     
       return view('admin.pages.saledetails',compact('saledetails'));
     }
 

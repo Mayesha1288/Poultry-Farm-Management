@@ -39,9 +39,9 @@
                         <div class="col-md-8 text-right">
                             <h4 style="color: #F81D2D;"><strong>Invoice </strong></h4>
                             
-                            <h5 class="user-name">Name:{{$saledetails->customer->customer_name}}</h5>
-                            <h6 class="user-name">Phone-number:{{$saledetails->customer->phone_number}}</h6>
-                            <h6 class="user-name">Address:{{$saledetails->customer->address}}</h6>
+                            <h5 class="user-name">Name:  {{$saledetails->customer->customer_name}}</h5>
+                            <h6 class="user-name">Phone-number:  {{$saledetails->customer->phone_number}}</h6>
+                            <h6 class="user-name">Address:  {{$saledetails->customer->address}}</h6>
                             
 
                             <!-- <p>221 ,Baker Street</p>
